@@ -9,8 +9,6 @@ services:
 
     volumes:
       - ./certs:/etc/letsencrypt
-      - /var/www/html/dns:/var/www/html/dns
-      - /etc/pihole:/etc/pihole
     restart: always
     network_mode: host
 

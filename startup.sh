@@ -6,7 +6,7 @@ rm /etc/apache2/sites-enabled/default-ssl.conf
 cd /etc/apache2/sites-available && a2ensite *
 a2dissite default-ssl 000-default
 
-for CONF_FILE in $(find /vhosts/ssl/ -type f -and -not -name "*default*" -printf "%f\n")
+for CONF_FILE in $(find /vhosts/ssl/ -type f -and -not -name "*default*" -and -name "*.conf" -printf "%f\n")
 do
     for DOMAIN in $(grep -Po "(?<=ServerName ).+$" ./$CONF_FILE)
     do

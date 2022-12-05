@@ -1,4 +1,4 @@
-./certs
-./vhosts
+certs/
+vhosts/
 !./vhosts/ssl/put-your-configs-here.txt
 !./vhosts/no_ssl/put-your-configs-here.txt

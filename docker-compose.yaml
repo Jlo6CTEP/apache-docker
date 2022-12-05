@@ -1,0 +1,16 @@
+version: '3.7'
+# Put all your services here
+services:
+  apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: apache-certbot
+
+    volumes:
+      - ./certs:/etc/letsencrypt
+      - /var/www/html/dns:/var/www/html/dns
+      - /etc/pihole:/etc/pihole
+    restart: always
+    network_mode: host
+
